@@ -97,6 +97,42 @@ if st.sidebar.button("Show Top 10 Genes"):
     else:
         st.warning("Please upload a CSV file to analyze top contributing genes.")
 
+# Button to display all images
+if st.sidebar.button("Display model accuracy"):
+    try:
+        # First row: Confusion Matrix and Cancer Type Correlation
+        st.markdown("## Model Analysis Results")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("### Confusion Matrix")
+            st.image("Result/confusion_matrix.png", use_container_width=False, width=300)
+        with col2:
+            st.markdown("### Cancer Type Correlation")
+            st.image("Result/cancer_type_correlation.png", use_container_width=False, width=300)
+        
+        # Second row: Precision-Recall Curve and Recall Result
+        col3, col4 = st.columns(2)
+        with col3:
+            st.markdown("### Precision-Recall Curve")
+            st.image("Result/precision_recall_curve.png", use_container_width=False, width=300)
+        with col4:
+            st.markdown("### Recall Result")
+            st.image("Result/recall_result.png", use_container_width=False, width=300)
+        
+        # Third row: ROC-AUC Result
+        col5, col6 = st.columns(2)
+        with col5:
+            st.markdown("### ROC-AUC Result")
+            st.image("Result/roc_auc.png", use_container_width=False, width=300)
+        with col6:
+            st.markdown('### Probability distribution')
+            st.image('Result/prob_distribution.png', use_container_width=False, width=300)
+
+
+    except FileNotFoundError as e:
+        st.error(f"An image file was not found: {e}")
+
+
 # Main UI
 st.title("Gene Sample Cancer Prediction Tool")
 st.markdown(
