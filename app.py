@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
 
 # Load models
 @st.cache_resource
@@ -132,6 +133,23 @@ if st.sidebar.button("Display model accuracy"):
     except FileNotFoundError as e:
         st.error(f"An image file was not found: {e}")
 
+st.sidebar.markdown("### Download Demo Data Sample")
+demo_files = [f for f in os.listdir("Demo_data/") if os.path.isfile(os.path.join("Demo_data/", f))]
+selected_demo_file = st.sidebar.selectbox("Select a Demo File to Download", demo_files)
+
+if st.sidebar.button("Download Selected Demo Data"):
+    try:
+        with open(os.path.join("Demo_data/", selected_demo_file), "rb") as file:
+            st.sidebar.download_button(
+                label=f"📥 Download {selected_demo_file}",
+                data=file,
+                file_name=selected_demo_file,
+                mime="application/octet-stream"
+            )
+    except FileNotFoundError:
+        st.sidebar.error("Selected file not found. Please check the file path.")
+    except Exception as e:
+        st.sidebar.error(f"An error occurred: {str(e)}")
 
 # Main UI
 st.title("Gene Sample Cancer Prediction Tool")
