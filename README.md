@@ -41,8 +41,8 @@ With advancements in **gene sequencing**, this project addresses:
 - Dimensionality reduction using **PCA**.
 - Applied **K-means clustering** to reveal cancer similarities and key genetic insights.
 
-📈 **Visualization Pipeline**:
-![Pipeline](https://via.placeholder.com/800x400?text=Visualization+Pipeline+Diagram) *(Placeholder - Add your actual pipeline image)*
+### 📈 **Visualization Pipeline**:
+![Pipeline](https://github.com/PhongCT1105/Cancer_Detector/raw/main/Cancer_Detection.drawio.png)
 
 ---
 
@@ -64,13 +64,10 @@ With advancements in **gene sequencing**, this project addresses:
   - Adjusted Rand Index (ARI)
   - Silhouette Score
 
-**Visualization Example**:
-![Clustering Results](https://via.placeholder.com/800x400?text=Clustering+Results+Visualization) *(Placeholder - Add your actual clustering visualization)*
-
 ---
 
 ## 🌐 Access and Demo
-- **📂 Code**: [GitHub Repository](https://github.com/CS539Team3)
+- **📂 Code**: [GitHub Repository](https://github.com/PhongCT1105/Cancer_Detector)
 - **🌟 Live Demo**: [Streamlit App](https://genes2cancer.streamlit.app/)
 
 ---
